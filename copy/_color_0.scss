@@ -1,0 +1,47 @@
+/* =======================  COLOR ======================
+========================================================*/
+
+$palettes: (
+  mono: (
+    black: #000,
+    dark: #333,
+    base: #666,
+    light: #888,
+    white: #fff,
+  ),
+  brown: (
+    light: #f7f4ef,
+    medium: #f7f4ee,
+    dark: #aaa392,
+  ),
+  brand: (
+    macaroni: #eba43c,
+    orange: #f37930,
+    green: #75a832,
+    teal: #138f87,
+    darker-gray: #466368,
+    dark-gray: #5c656a,
+    medium-gray: #9baeb2,
+    light-gray: #919598,
+    dark-blue: #1e3037,
+  ),
+);
+
+/*
+* Better function for color palettes using Sass maps
+* Link: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+* Usage: color: palette(brand,tan);
+*/
+@function palette($palette, $tone: "base") {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+// Color
+$text-primary: #666;
+$text-secondary: #b6a1b0;
+$bg-primary: #49485a;
+$bg-secondary: #f7f8f8;
+$bg-ternary: palette(brand, medium-gray);
+
+$link-primary: #d37f1294;
+$link-secondary: #c85535;
